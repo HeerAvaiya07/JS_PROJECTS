@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #1a1a1a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -10,16 +10,18 @@ body {
 }
 
 .card {
-    background-color: rgb(138, 214, 126);
-    border-radius: 8px;
-    padding: 30px;
-    width: 300px;
+    background: linear-gradient(to bottom right, #ffffff, #dfe9f3);
+    border-radius: 16px;
+    padding: 40px;
+    width: 340px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-    color: #224291;
+    color: #1a3c6b;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    font-size: 26px;
 }
 
 form {
@@ -28,20 +30,33 @@ form {
 }
 
 input {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: rgb(138, 214, 126);
-    border: 1px solid black;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    background-color: #f3f7fb;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+input:focus {
+    border-color: #5a95e3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(90, 149, 227, 0.4);
 }
 
 button {
-    background-color: #3b5cae;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: #5a95e3;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border: none;
 }
 
 button:hover {
-    background-color: #192e65;
+    background-color: #3b6db3;
 }
