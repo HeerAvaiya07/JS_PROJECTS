@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const products = [
     { id: 1, name: "Product 1", price: 29.99 },
-    { id: 2, name: "Product 2", price: 19.99 },
+    { id: 2, name: "Product 2", price: 79.99 },
     { id: 3, name: "Product 3", price: 59.999 },
   ];
 
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productDiv = document.createElement("div");
     productDiv.classList.add("product");
     productDiv.innerHTML = `
-    <span>${product.name} - $${product.price.toFixed(2)}</span>
+    <span>${product.name} - ₹${product.price.toFixed(2)}</span>
     <button data-id="${product.id}">Add to cart</button>
     `;
     productList.appendChild(productDiv);
@@ -48,14 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
         totalPrice += item.price;
         const cartItem = document.createElement("div");
         cartItem.innerHTML = `
-        ${item.name} - $${item.price.toFixed(2)}
+        ${item.name} - ₹${item.price.toFixed(2)}
         `;
         cartItems.appendChild(cartItem);
         totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`;
       });
     } else {
       emptyCartMessage.classList.remove("hidden");
-      totalPriceDisplay.textContent = `$0.00`;
+      totalPriceDisplay.textContent = `₹0.00`;
     }
   }
 
