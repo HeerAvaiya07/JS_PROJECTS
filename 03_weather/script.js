@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cityNameDisplay = document.getElementById("city-name");
     const temperatureDisplay = document.getElementById("temperature");
     const descriptionDisplay = document.getElementById("description");
-    const errorMessage = document.getElementById("error-message"); // ✅ Fixed ID
+    const errorMessage = document.getElementById("error-message");
 
     const API_KEY = "1c701330c9a78f1bde7a663083ead803";
 
