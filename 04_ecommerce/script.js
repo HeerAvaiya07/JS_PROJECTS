@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Initial render
   renderCart();
 
   products.forEach((product) => {
@@ -91,3 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCart();
   });
 });
+
+
+
+
+
+
+
+
