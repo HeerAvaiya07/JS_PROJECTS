@@ -20,31 +20,62 @@ document.addEventListener("DOMContentLoaded", () => {
         saveTasks();
         renderTask(newTask);
         todoInput.value = "";
-        console.log(tasks);
     });
 
     function renderTask(task) {
         const li = document.createElement("li");
         li.setAttribute("data-id", task.id);
         if (task.completed) li.classList.add("completed");
-        li.innerHTML = `
-    <span>${task.text}</span>
-    <button>delete</button>
-    `;
-        li.addEventListener("click", (e) => {
-            if (e.target.tagName === "BUTTON") return;
-            task.completed = !task.completed;
-            li.classList.toggle("completed");
-            saveTasks();
+
+        const span = document.createElement("span");
+        span.textContent = task.text;
+
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+
+        // Edit / Save functionality
+        editBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (editBtn.textContent === "Edit") {
+                const input = document.createElement("input");
+                input.type = "text";
+                input.value = task.text;
+                li.insertBefore(input, span);
+                li.removeChild(span);
+                editBtn.textContent = "Save";
+            } else {
+                const input = li.querySelector("input");
+                task.text = input.value.trim();
+                span.textContent = task.text;
+                li.insertBefore(span, input);
+                li.removeChild(input);
+                editBtn.textContent = "Edit";
+                saveTasks();
+            }
         });
 
-        li.querySelector("button").addEventListener("click", (e) => {
-            e.stopPropagation(); 
+        // Delete functionality
+        deleteBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
             tasks = tasks.filter((t) => t.id !== task.id);
             li.remove();
             saveTasks();
         });
 
+        // Mark complete on click, but NOT when clicking a button or input
+        li.addEventListener("click", (e) => {
+            if (e.target.tagName === "BUTTON" || e.target.tagName === "INPUT") return;
+            task.completed = !task.completed;
+            li.classList.toggle("completed");
+            saveTasks();
+        });
+
+        li.appendChild(span);
+        li.appendChild(editBtn);
+        li.appendChild(deleteBtn);
         todoList.appendChild(li);
     }
 
