@@ -12,19 +12,19 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 20px;
 }
 
 .container {
-  width: 400px;
-  padding: 20px;
+  width: 100%;
+  max-width: 420px;
+  padding: 25px;
   background-color: #1e1e1e;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -32,7 +32,8 @@ h3 {
 form {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 input[type="text"],
@@ -48,13 +49,15 @@ input[type="number"] {
 }
 
 button {
-  padding: 10px;
+  padding: 10px 14px;
   background-color: #6200ea;
   border: none;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: 14px;
+  margin-top: 6px;
 }
 
 button:hover {
@@ -68,16 +71,44 @@ button:hover {
 
 #expense-list li {
   background-color: #333333;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px 14px;
+  margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 6px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+.expense-text {
+  flex: 1;
+  font-size: 15px;
+}
+
+.edit-name,
+.edit-amount {
+  width: 45%;
+  padding: 8px;
+  margin: 5px 0;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Buttons inside list item */
+.expense-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Total section */
 #total {
   text-align: right;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .hidden {

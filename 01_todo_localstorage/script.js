@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Delete functionality
         deleteBtn.addEventListener("click", (e) => {
             e.stopPropagation();
             tasks = tasks.filter((t) => t.id !== task.id);
@@ -65,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
             saveTasks();
         });
 
-        // Mark complete on click, but NOT when clicking a button or input
         li.addEventListener("click", (e) => {
             if (e.target.tagName === "BUTTON" || e.target.tagName === "INPUT") return;
             task.completed = !task.completed;
