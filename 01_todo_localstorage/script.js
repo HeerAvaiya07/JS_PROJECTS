@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
 
-        // Edit / Save functionality
         editBtn.addEventListener("click", (e) => {
             e.stopPropagation();
             if (editBtn.textContent === "Edit") {
