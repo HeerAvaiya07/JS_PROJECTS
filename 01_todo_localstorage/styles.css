@@ -90,7 +90,7 @@ li input[type="text"] {
 }
 
 li.completed span {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     opacity: 0.7;
 }
 
@@ -103,7 +103,6 @@ li button {
     flex-shrink: 0;
 }
 
-/* Edit button style */
 li button:first-of-type {
     background-color: #1976d2;
 }
@@ -112,7 +111,6 @@ li button:first-of-type:hover {
     background-color: #115293;
 }
 
-/* Delete button style */
 li button:last-of-type {
     background-color: #d32f2f;
 }
